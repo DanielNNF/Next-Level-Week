@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+
+{% set pageId = "page-create-point" %}
+
+{% block title %}
+<title>Criar um ponto de coleta</title>
+{% endblock title %}
+
+
+{% block styles %}
+<link rel="stylesheet" href="/Style/create-point.css">
+<link rel="stylesheet" href="/Style/modal.css">
+{% endblock styles %}
+
+{% block content %}
+
+{% include "partials/page-header.html" %}
+<!--inserir variável para se aplicar a mais páginas html-->
+
+<form action="/savepoint" method="POST"><!--guardar os dados cadastrados para não ficarem expostos na url-->
+ 
+  <!--Criação de um modelo de box para cadastros-->
+  <h1>Cadastro do ponto de coleta</h1>
+
+
+  <fieldset>
+    <legend>
+      <h2>Dados da entidade</h2>
+    </legend>
+
+    <div class="field-group">
+      <div class="field">
+        <label for="Name">Nome da entidade</label>
+        <input 
+        type="name" 
+        name="name" 
+        required="required">
+  
+      </div><div class="field">
+        <label for="Name">Imagem da entidade</label>
+        <input 
+        type="url" 
+        name="image"
+        placeholder="http://"
+
+        required= "required">
+  
+      </div>
+    </div>
+
+    
+
+    <div class="field-group">
+      <div class="field">
+        <label for="address">Endereço</label>
+        <input 
+        type="text" 
+        name="address" 
+        required="required">
+
+      </div>
+      <div class="field">
+        <label for="address2">Número/Complemento</label>
+        <input 
+        type="text" 
+        name="address2" 
+        required="required">
+
+
+      </div>
+
+    </div>
+
+    <div class="field-group">
+
+
+      <div class="field">
+        <label for="state">Estado</label>
+        <select name="uf" required>
+          <!--Para adicionar um machcode; REQUIRED exige que o campo seja preenchido para avançar para a próxima tela-->
+          <option value="">Selecione o Estado</option>
+          <!--Preenche o box de pesquisa e posteriormente será utilizado JS-->
+
+
+        </select>
+
+
+
+      </div>
+
+      <div class="field">
+        <label for="city">Cidade</label>
+        <select name="city" disabled required>
+          <!--O DISABLED só permite a seleção se a opção anterior for selecionada-->
+          <option value="">Selecione a Cidade</option>
+        </select>
+
+        <input 
+        type="hidden" 
+        name="state">
+
+
+      </div>
+    </div>
+
+  </fieldset>
+  <fieldset>
+    <legend>
+      <h2>Itens de coleta</h2>
+      <span>Selecione um ou mais itens abaixo</span>
+
+    </legend>
+
+
+    <div class="items-grid">
+      <li data-id="lâmpadas">
+        <img src="/assets/lampadas.svg" alt="Lâmpadas">
+        <span>lâmpadas</span>
+      </li>
+      <li data-id="Pilhas e baterias">
+        <img src="/assets/baterias.svg" alt="Pilhas e Baterias">
+        <span>Pilhas e baterias</span>
+      </li>
+      <li data-id="Papéis e Papelão">
+        <img src="/assets/papeis-papelao.svg" alt="Papéis e Papelão">
+        <span>Papéis e Papelão</span>
+      </li>
+      <li data-id="Resíduos Eletrônico">
+        <img src="/assets/eletronicos.svg" alt="Resíduos Eletrônico">
+        <span>Resíduos Eletrônico</span>
+      </li>
+      <li data-id="Resíduos Orgânicos">
+        <img src="/assets/organicos.svg" alt="Resíduos Orgânicos">
+        <span>Resíduos Orgânicos</span>
+      </li>
+      <li data-id="Óleo de Cozinha">
+        <img src="/assets/oleo.svg" alt="Óleo de Cozinha">
+        <span>Óleo de Cozinha</span>
+      </li>
+    </div>
+
+    <input type="hidden" name="items">
+
+  </fieldset>
+
+
+  <button type="submit">Cadastrar ponto de coleta</button>
+
+
+
+</form>
+
+{% if saved %}
+  {% include "partials/point-created.html" %}
+{% endif %}
+
+
+
+{% endblock content %}
+
+{% block modal %}
+  {% if saved %}
+    {% include "partials/point-created.html" %}
+  {% endif %}
+{% endblock modal %}
+
+
+{% block scripts %}
+<script src="/Scripts/create-point.js"></script>
+{% endblock scripts %}
