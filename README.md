@@ -3,7 +3,16 @@
 
 </h3></b></br>
 
-<img alt="Logo" title="#logo" width="550" src="https://user-images.githubusercontent.com/38081852/83580830-6f63e200-a513-11ea-9a27-0a109ec1e4d0.png">      
+<img alt="Logo" title="#logo" width="550" src="https://user-images.githubusercontent.com/38081852/83580830-6f63e200-a513-11ea-9a27-0a109ec1e4d0.png"> 
+
+<b>Algumas páginas criadas:</b>
+
+
+<img alt="Logo" title="#Cadastro" width="600" src="https://user-images.githubusercontent.com/62966905/84078323-1e3e6d00-a9af-11ea-89e8-98d3124a39b3.png">
+<img alt="Logo" title="#Pesquisa" width="600" src="https://user-images.githubusercontent.com/62966905/84078333-20a0c700-a9af-11ea-9b00-0dba87edb4dd.png">
+
+
+
    
 ------------------
 </br>
@@ -30,5 +39,6 @@ Quem ministrou o projeto foi <a href="https://github.com/maykbrito">Maiky Brito<
 [*Meu LinkedIn*](https://www.linkedin.com/in/daniel-ara%C3%BAjo-80159355/)
 
 Sigamos evoluindo!!!
+
 
 
