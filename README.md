@@ -28,7 +28,7 @@ Quem ministrou o projeto foi <a href="https://github.com/maykbrito">Maiky Brito<
 - CSS
 - Javascript
 - Node.js
-- SQL (Para banco de dados)
+- SQLITE (Para banco de dados)
 - Nunjucks
 </br></br>
 
